@@ -20,3 +20,7 @@ iron:router
 aldeed:autoform
 aldeed:collection2
 twbs:bootstrap
+aldeed:delete-button
+accounts-password
+ian:accounts-ui-bootstrap-3
+natestrauser:font-awesome
