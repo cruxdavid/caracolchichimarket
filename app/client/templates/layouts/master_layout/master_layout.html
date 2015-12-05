@@ -3,10 +3,16 @@
   <div class="navbar-fixed">
   <nav class="light blue">
       <div class="nav-wrapper container">
-          <a href="#!" class="brand-logo">&nbsp;Materialize</a>
+          <a href="#!" class="brand-logo">&nbsp;CCMarket</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul class="right hide-on-med-and-down">
-              <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
+            {{#if currentUser}}
+            <li><a class="logout"><i class="mdi-action-input"></i></a></li>
+            {{else}}
+            <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
+            <li><a href="#modalRegister" class="modal-trigger"><i class="mdi-social-group-add"></i></a></li>
+            {{/if}}
+
               <li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
               <li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
               <li class="search">
@@ -19,67 +25,97 @@
                 </form>
               </li>
           </ul>
-          <ul class="side-nav" id="mobile-demo">
-              <li>
-                  <a href="#">
-                      <input id="search" type="search" placeholder="search">
-                  </a>
-              </li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-          </ul>
+
       </div>
   </nav>
 </div>
-<nav class="light blue lighten-2 flat hide-on-med-and-down">
-  <div class="nav-wrapper container">
-      <form>
-          <div class="input-field">
-              <input id="search" type="search" required="">
-              <label for="search"><i class="mdi-action-search"></i></label>
-              <i class="mdi-navigation-close"></i>
-          </div>
-      </form>
-  </div>
-</nav>
+
 
   {{> yield}}
 
 
   <!--login modal-->
   <div id="modalLogin" class="modal">
-      <div class="modal-content">
-          <h2 class="center-align">Login</h2>
-          <div class="center-align">
-              <div class="divider"></div>
-              <form class="col s12">
-                  <div class="row center-align">
-                      <div class="input-field col m10 offset-m1 blue-text">
-                          <i class="mdi-action-account-circle prefix"></i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">Username</label>
-                      </div>
-                      <div class="input-field col m10 offset-m1 blue-text ">
-                          <i class="mdi-action-lock-open prefix"></i>
-                          <input id="icon_password" type="password" class="validate">
-                          <label for="icon_password">Password</label>
-                      </div>
-                      <div class="input-field col m10 offset-m1 blue-text">
-                          <input type="checkbox" class="blue-text" id="filled-in-box" checked="checked">
-                          <label for="filled-in-box">Remember me next time</label>
-                      </div>
-                  </div>
-              </form>
-              <div class="divider"></div>
-              <p>
-                  <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
-                  <a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close">Login</a>
-              </p>
-          </div>
+      <div class="modal-content z-depth-1">
+          {{> loginModalContent}}
+
+      </div>
+  </div>
+
+  <!--register modal-->
+
+  <div id="modalRegister" class="modal">
+      <div class="modal-content z-depth-1">
+        {{> registerModalContent}}
+
+
       </div>
   </div>
 
 
+</template>
+
+<template name="loginModalContent">
+  <h2 class="center-align">Login</h2>
+  <div class="center-align">
+      <div class="divider"></div>
+      <div class="col s12">
+
+      </div>
+      <form class="login-form">
+          <div class="row center-align">
+              <div class="input-field col m10 offset-m1 blue-text">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input name="email" id="icon_prefix" type="email" class="validate">
+                  <label for="icon_prefix">Email</label>
+              </div>
+              <div class="input-field col m10 offset-m1 blue-text ">
+                  <i class="mdi-action-lock-open prefix"></i>
+                  <input name="password" id="icon_password" type="password" class="validate">
+                  <label for="icon_password">Password</label>
+              </div>
+
+          </div>
+          <div class="divider"></div>
+          <p>
+
+              <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+              <input type="submit" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close" value="Login">
+          </p>
+      </form>
+
+
+  </div>
+</template>
+
+<template name="registerModalContent">
+  <h2 class="center-align">Register</h2>
+  <div class="center-align">
+      <div class="divider"></div>
+      <div class="col s12">
+
+      </div>
+      <form class="register-form">
+          <div class="row center-align">
+              <div class="input-field col m10 offset-m1 blue-text">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input name="email" id="icon_prefix" type="email" class="validate">
+                  <label for="icon_prefix">Email</label>
+              </div>
+              <div class="input-field col m10 offset-m1 blue-text ">
+                  <i class="mdi-action-lock-open prefix"></i>
+                  <input name="password" id="icon_password" type="password" class="validate">
+                  <label for="icon_password">Password</label>
+              </div>
+
+          </div>
+          <div class="divider"></div>
+          <p>
+              <a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+              <input type="submit" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close" value="Register">
+          </p>
+      </form>
+
+
+  </div>
 </template>
