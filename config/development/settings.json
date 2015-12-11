@@ -1,6 +1,11 @@
 {
   "public": {
+  	"recordsPerPage" : "5"
   },
+  "private": {
+    "AWSAccessKeyId" : "AKIAJ2YSDBZGVUXYXAFA",
+    "AWSSecretAccessKey" : "+8U94VWwobADM5lsz1og6yasDdONogIKLPd78bH3",
+    "AWSBucket" : "proyecto-web"
+  }
 
-  "sample": "value"
 }

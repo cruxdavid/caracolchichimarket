@@ -26,3 +26,16 @@ ian:accounts-ui-bootstrap-3
 natestrauser:font-awesome
 materialize:materialize
 accounts-base
+raix:ui-dropped-event
+cfs:standard-packages
+cfs:gridfs
+cfs:s3
+reactive-var
+chrismbeckett:toastr
+sacha:spin
+spacebars
+reload
+random
+logging
+ejson
+check

@@ -1,13 +1,7 @@
-<template name="Home">
-  <body>
+<template name="home">
+  {{> dropzone}}
 
-    <h1> This is the landing page. </h1>
-
-  </body>
-
-
-
-
-
-
+  {{#each images}}
+    {{> image}}
+  {{/each}}
 </template>
