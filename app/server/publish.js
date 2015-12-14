@@ -5,3 +5,7 @@ Meteor.publish('images', function(limit) {
     limit: limit
   });
 });
+
+Meteor.publish('products', function () {
+  return Products.find();
+});
