@@ -27,12 +27,11 @@ Router.route('products/uploadImages',{
 	where: 'client'
 });
 
-Router.route('/products/:_id', function () {
-  this.render('ViewProduct', {
-    data: function () {
-      return Products.findOne({_id: this.params._id});
-    }
-  });
+Router.route('products/:_id',{
+  name:'ViewProduct',
+  controller: 'ProductsController',
+  action: 'view',
+  where: 'client'
 });
 
 

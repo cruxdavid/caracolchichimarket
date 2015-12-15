@@ -3,11 +3,15 @@
     <div class="col s12 m6">
       <div class="card ">
         <div class="card-content black-text ">
-          <span class="card-title"> {{name}} Test </span><br>
+          <span class="card-title"> {{producto.name}} Test </span><br>
           <!--{{> quickForm collection="Products" id="insertProductForm" type="insert" buttonContent="Add"}}-->
-          Nombre: {{name}}
-          Precio: {{precio}}
-          Descripcion: {{descripcion}}
+          <p>Nombre: {{producto.name}}</p>
+          <p>Precio: {{producto.price}}</p>
+          <p>Descripcion: {{producto.description}}</p>
+          {{#each images}}
+            {{>image}}
+          {{/each}}
+          
 
         </div>
       </div>
