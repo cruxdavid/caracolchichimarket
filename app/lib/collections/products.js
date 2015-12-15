@@ -16,6 +16,12 @@ if (Meteor.isServer) {
     }
   });
 
+  collectionApi = new CollectionAPI({ authToken: undefined });
+  collectionApi.addCollection(Products, 'products', {
+    methods: ['POST','GET','PUT','DELETE', 'PATCH']
+  });
+  collectionApi.start();
+
 }
 
 Products.attachSchema(new SimpleSchema({
