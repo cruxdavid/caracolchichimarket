@@ -25,4 +25,13 @@ Router.route('products/uploadImages',{
 	where: 'client'
 });
 
+Router.route('/products/:_id', function () {
+  this.render('ViewProduct', {
+    data: function () {
+      return Products.findOne({_id: this.params._id});
+    }
+  });
+});
+
+
 Router.onBeforeAction('loading');

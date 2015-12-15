@@ -3,11 +3,12 @@
   <div class="navbar-fixed">
   <nav class="light blue">
       <div class="nav-wrapper container">
-          <a href="#!" class="brand-logo">&nbsp;CCMarket</a>
+          <a href="/" class="brand-logo">&nbsp;CCMarket</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul class="right hide-on-med-and-down">
             {{#if currentUser}}
             <li><a class="logout"><i class="mdi-action-input"></i></a></li>
+            <li><a href="products/create"><i class="mdi-content-add-box"></i></a></li>
             {{else}}
             <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
             <li><a href="#modalRegister" class="modal-trigger"><i class="mdi-social-group-add"></i></a></li>
