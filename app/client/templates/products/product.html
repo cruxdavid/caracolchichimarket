@@ -6,17 +6,17 @@
           <span class="card-title"> {{producto.name}} Test </span><br>
           <div class="slider">
             <ul class="slides">
-              {{#each images}}    
+              {{#each images}}
               <li>
               <img src="{{url}}"> <!-- random image -->
-              </li>              
+              </li>
               {{/each}}
             </ul>
           </div>
           <!--{{> quickForm collection="Products" id="insertProductForm" type="insert" buttonContent="Add"}}-->
-          <p>Nombre: {{producto.name}}</p>
-          <p>Precio: {{producto.price}}</p>
-          <p>Descripcion: {{producto.description}}</p>
+          <p><span class="light-blue">Nombre:</span> {{producto.name}}</p>
+          <p><span class="light-blue">Precio:</span> {{producto.price}}</p>
+          <p><span class="light-blue">Descripcion:</span> {{producto.description}}</p>
         </div>
       </div>
     </div>
