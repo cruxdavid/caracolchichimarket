@@ -1,44 +1,25 @@
 <template name="ViewProduct">
-
-<div class="col-md-4">
-  <div class="card medium col-sm-12 col-md-12 z-depth-2">
-    <div class="card-header">
-      <p class="flow-text"> {{producto.name}}</p>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card ">
+        <div class="card-content black-text ">
+          <span class="card-title"> {{producto.name}} Test </span><br>
+          <div class="slider">
+            <ul class="slides">
+              {{#each images}}    
+              <li>
+              <img src="{{url}}"> <!-- random image -->
+              </li>              
+              {{/each}}
+            </ul>
+          </div>
+          <!--{{> quickForm collection="Products" id="insertProductForm" type="insert" buttonContent="Add"}}-->
+          <p>Nombre: {{producto.name}}</p>
+          <p>Precio: {{producto.price}}</p>
+          <p>Descripcion: {{producto.description}}</p>
+        </div>
+      </div>
     </div>
-    <div class="card-content">
-
-
-        <p><b> Nombre: </b>{{producto.name}}</p>
-
-        <p><b>Descripcion: </b>{{producto.description}}</p>
-         <b>Precio: </b> $ {{producto.price}}
-    </div>
-
-    </div>
-
-
-</div>
-<div class="col-md-8">
-  <div class="card large col-sm-12 col-md-12 z-depth-2">
-
-<div class="slider">
-  <ul class="slides">
-    {{#each images}}
-    <li>
-      <img src="{{url}}" alt="image"/>
-    </li>
-    {{/each}}
-  </ul>
-</div>
-
-
-
-
-
-
   </div>
-</div>
-
-
 
 </template>
