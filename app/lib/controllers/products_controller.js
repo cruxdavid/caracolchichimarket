@@ -34,7 +34,9 @@ ProductsController = RouteController.extend({
   view: function(){
     this.render('ViewProduct',{});
   },
-  
+  edit: function(){
+    this.render('EditProduct',{});
+  },
   upload: function(){
     this.render('uploadImages',{});
   },

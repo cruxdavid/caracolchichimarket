@@ -9,6 +9,12 @@ Template.ViewProduct.helpers({
 
 });
 
+Template.ViewProduct.events({
+  'click .botonEditar': function(){
+    Session.set('PID',producto._id);
+  }
+});
+
 Template.ViewProduct.created = function() {
   var self = this;
 

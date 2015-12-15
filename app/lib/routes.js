@@ -34,5 +34,11 @@ Router.route('products/:_id',{
   where: 'client'
 });
 
+Router.route('products/edit/:_id',{
+  name:'EditProduct',
+  controller: 'ProductsController',
+  action: 'edit',
+  where: 'client'
+});
 
 Router.onBeforeAction('loading');
