@@ -6,8 +6,10 @@ Router.configure({
 
 
 Router.route('/', {
-  name: 'home',
-  template: 'home'
+  name: 'Store',
+  controller: 'ProductsController',
+  action: 'list',
+  where: 'client'
 });
 
 
