@@ -8,13 +8,13 @@
           <ul class="right hide-on-med-and-down">
             {{#if currentUser}}
             <li><a class="logout"><i class="mdi-action-input"></i></a></li>
-            <li><a href="products/create"><i class="mdi-content-add-box"></i></a></li>
+            <li><a href="/products/create"><i class="mdi-content-add-box"></i></a></li>
             {{else}}
             <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
             <li><a href="#modalRegister" class="modal-trigger"><i class="mdi-social-group-add"></i></a></li>
             {{/if}}
 
-              <li><a href="."><i class="mdi-navigation-refresh"></i></a></li>
+              <li><a href="/"><i class="mdi-action-home"></i></a></li>
               <li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
               <li class="search">
                 <form>
