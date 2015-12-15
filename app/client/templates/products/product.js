@@ -4,9 +4,9 @@ Template.ViewProduct.helpers({
 	},
 
 	images: function(){
-		return Images.find({producto: Session.get('PID')}); 
+		return Images.find({producto: Session.get('PID')});
 	}
-	
+
 });
 
 Template.ViewProduct.created = function() {
@@ -14,7 +14,7 @@ Template.ViewProduct.created = function() {
 
   self.limit = new ReactiveVar;
   self.limit.set(parseInt(Meteor.settings.public.recordsPerPage));
-  
+
   Tracker.autorun(function() {
     Meteor.subscribe('images', self.limit.get());
   });
@@ -28,10 +28,14 @@ Template.ViewProduct.rendered = function() {
       incrementLimit(self);
     }
   });
+
+	$(document).ready(function(){
+      $('.slider').slider();
+    });
 }
 
 var incrementLimit = function(templateInstance) {
-  var newLimit = templateInstance.limit.get() + 
+  var newLimit = templateInstance.limit.get() +
     parseInt(Meteor.settings.public.recordsPerPage);
   templateInstance.limit.set(newLimit);
 }
